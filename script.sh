@@ -11,11 +11,9 @@ echo '::group::🐶 Installing reviewdog ... https://github.com/reviewdog/review
 curl -sfL https://raw.githubusercontent.com/reviewdog/reviewdog/master/install.sh | sh -s -- -b "${TEMP_PATH}" "${REVIEWDOG_VERSION}" 2>&1
 echo '::endgroup::'
 
-if [ ! -f "$(npm bin)/eslint" ]; then
-  echo '::group:: Running `npm install` to install eslint ...'
-  npm install
-  echo '::endgroup::'
-fi
+echo "::group:: Running \`${INPUT_PACKAGE_MANAGER} install\` to install node dependencies ..."
+$INPUT_PACKAGE_MANAGER install
+echo '::endgroup::'
 
 echo "eslint version:$($(npm bin)/eslint --version)"
 
