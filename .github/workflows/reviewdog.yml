@@ -42,3 +42,10 @@ jobs:
           reporter: github-check
           level: warning
           filter_mode: file
+      - name: eslint-subproject-yarn
+        uses: ./
+        with:
+          tool_name: eslint-subproject-yarn
+          workdir: ./test-subproject-yarn
+          eslint_flags: 'sub-testdata/'
+          package_manager: yarn

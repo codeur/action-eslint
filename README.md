@@ -54,6 +54,10 @@ Optional. Flags and args of eslint command. Default: '.'
 
 Optional. The directory from which to look for and run eslint. Default '.'
 
+### `package_manager`
+
+Optional. The package manager to install node dependencies. [npm,yarn] Default 'npm'
+
 ## Example usage
 
 You also need to install [eslint](https://github.com/eslint/eslint).
